@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="60dip"
+    android:layout_height="25dip"
+    android:id="@+id/small_window_layout"
+    android:background="@mipmap/ic_launcher">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/percent"
+        android:gravity="center"
+        android:textColor="#ffffff" />
+</LinearLayout>
