@@ -2,6 +2,8 @@ package com.example.richardxu.a360floatwindowdemo;
 
 import android.content.Context;
 import android.icu.text.DateFormat;
+import android.icu.text.LocaleDisplayNames;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -88,12 +90,17 @@ public class FloatWindowSmallView extends LinearLayout {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 //手指按下时记录必要数据，纵坐标的值都需要减去状态栏的高度
-                xInView = event.getX();
+                xInView = event.getX(); //event.getX() ----- 是在View内；相对于View的位置
                 yInView = event.getY();
-                xDownInScreen = event.getRawX();
+                xDownInScreen = event.getRawX(); //event.getRawX() ------- 是在屏幕内，相对于整个屏幕的位置
                 yDownInScreen = event.getRawY() - getStatusBarHeight();
                 xInScreen = event.getRawX();
                 yInScreen = event.getRawY() - getStatusBarHeight();
+                Log.d("Richard",
+                        "============ xInView " + xInView + " yInView " + yInView
+                        + " getStatusBarHeight " + getStatusBarHeight() +
+                                " xDownInScreen " + xDownInScreen + " yDownInScreen " + yDownInScreen );
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 xInScreen = event.getRawX();
